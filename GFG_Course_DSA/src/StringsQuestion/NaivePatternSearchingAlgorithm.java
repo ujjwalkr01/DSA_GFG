@@ -2,7 +2,7 @@ package StringsQuestion;
 
 import java.util.Scanner;
 
-public class NaivePatternSearching {
+public class NaivePatternSearchingAlgorithm {
 
 	public static void main(String[] args) {
 
