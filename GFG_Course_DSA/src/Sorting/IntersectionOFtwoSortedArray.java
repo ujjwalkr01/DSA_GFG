@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import Searching.BinarySearch;
 
-public class InsertionOFtwoSortedArray {
+public class IntersectionOFtwoSortedArray {
 
 	public static void main(String[] args) {
 
