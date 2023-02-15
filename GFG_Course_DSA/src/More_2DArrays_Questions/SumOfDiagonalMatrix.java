@@ -1,8 +1,8 @@
-package arrays2D_Questions;
+package More_2DArrays_Questions;
 
 import java.util.Scanner;
 
-public class DiagonalMatrix {
+public class SumOfDiagonalMatrix {
 
 	public static void main(String[] args) {
 

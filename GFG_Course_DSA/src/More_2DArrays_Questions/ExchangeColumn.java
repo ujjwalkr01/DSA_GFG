@@ -1,8 +1,8 @@
-package arrays2D_Questions;
+package More_2DArrays_Questions;
 
 import java.util.Scanner;
 
-public class ExchangeRows {
+public class ExchangeColumn {
 
 	public static void main(String[] args) {
 
@@ -16,23 +16,17 @@ public class ExchangeRows {
 				matrix[i][j] = sc.nextInt();
 			}
 		}
-		interchangeRows(matrix);
+		exchangeColumn(matrix);
 	}
 
-	private static void interchangeRows(int[][] matrix) {
+	private static void exchangeColumn(int[][] matrix) {
 
-			for (int j = 0; j < matrix[0].length; j++) {
-				int low = 0, high = matrix.length - 1;
+		for (int i = 0; i < matrix.length; i++) {
+			int low = 0, high = matrix[0].length - 1;
 
-				while (low < high) {
-
-					int temp = matrix[low][j];
-					matrix[low][j] = matrix[high][j];
-					matrix[high][j] = temp;
-
-					low++;
-					high--;
-				}
+			int temp = matrix[i][low];
+			matrix[i][low] = matrix[i][high];
+			matrix[i][high] = temp;
 
 		}
 
@@ -42,7 +36,6 @@ public class ExchangeRows {
 			}
 			System.out.println();
 		}
-
 	}
 
 }
