@@ -12,9 +12,9 @@ public class CheckIfStringRotations {
 		String str2 = sc.next();
 
 		if (checkSubstringAfterRotation(str1, str2)) {
-			System.out.println("1");
+			System.out.println("Yes");
 		} else {
-			System.out.println("0");
+			System.out.println("No");
 		}
 	}
 
@@ -23,23 +23,11 @@ public class CheckIfStringRotations {
 		if (str1.length() != str2.length()) {
 			return false;
 		}
-		if(str1.length()<=2 || str2.length()<=2) {
-			return (str1.equals(str2));
-		}
+		String s = str1 + str1;
 
-		String clock_rot = "";
-		String antiClock_rot = "";
-		int len = str1.length();
-
-		clock_rot = str1.substring(len - 2) + str1.substring(0, len - 2);
-		System.out.println(clock_rot);
-
-		antiClock_rot = str1.substring(2, len) + str1.substring(0, 2);
-		System.out.println(antiClock_rot);
-
-		if(str2.equals(antiClock_rot)||str2.equals(clock_rot)) {
+		if (s.indexOf(str2) >= 0) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
