@@ -13,7 +13,21 @@ public class SumOfNnatural {
 
 		sumOf(n);
 		System.out.println(sumOf(n));
+		System.out.println("----------------------------------");
+		
+		int sum=0;		
+		alternateMethod(n, sum);
+		System.out.println(alternateMethod(n, sum));
 
+
+	}
+	private static int alternateMethod(int n, int sum) {
+
+		if (n == 0) {
+			return sum;
+		}
+
+		return alternateMethod(n - 1, sum + n); //tail recursion 
 	}
 
 	static int sumOf(int n) {
