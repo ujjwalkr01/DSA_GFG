@@ -13,16 +13,16 @@ public class SumOfArrayElement {
 		for (int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
 		}
-		int i = 0;
-		System.out.println(sumOfelements(arr, i));
+
+		System.out.println(sumOfelements(arr, n));
 	}
 
-	private static int sumOfelements(int[] arr, int i) {
+	private static int sumOfelements(int[] arr, int n) {
 
-		if (i == arr.length) {
+		if (n <=0) {
 			return 0;
 		}
-		return sumOfelements(arr, i + 1)+ arr[i];
+		return sumOfelements(arr, n-1)+ arr[n-1];
 	}
 
 }
