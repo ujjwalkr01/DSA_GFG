@@ -1,4 +1,4 @@
-package LinkedList_DoublyLinkList;
+package DoublyLinkedList;
 
 class Node {
 	int data;
