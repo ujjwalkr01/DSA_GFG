@@ -19,6 +19,11 @@ public class InsertElementAtbegining {
 		head.next = new Nodes(20);
 		head.next.next = new Nodes(40);
 		head.next.next.next = new Nodes(35);
+		
+		head.next.prev = head;
+		head.next.next.prev = head.next;
+		head.next.next.next.prev = head.next.next;
+		
 		printList(head);
 		System.out.println("After inserting ");
 		int ele = 5;
