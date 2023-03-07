@@ -22,11 +22,7 @@ public class PalindromeLinkedList {
 		head1.next.next.next.next.next = new Nod3('s');
 
 		printList(head1);
-//		if (checkPalindrome(head1)) {
-//			System.out.println("Yes");
-//		} else {
-//			System.out.println("No");
-//		}
+
 		if (checkPalindromeMethod2(head1)) {
 			System.out.println("Yes");
 		} else {
@@ -47,33 +43,6 @@ public class PalindromeLinkedList {
 
 		Nod3 curr = head1;
 		while (rev != null) {
-			if (curr.data != rev.data) {
-				return false;
-			}
-			curr = curr.next;
-			rev = rev.next;
-		}
-		return true;
-	}
-
-	private static boolean checkPalindrome(Nod3 head1) {
-
-		Nod3 dummy = new Nod3('0');
-		Nod3 ptr = dummy, curr = head1;
-
-		while (curr != null) {
-			ptr.next = curr;
-			ptr = ptr.next;
-			curr = curr.next;
-			ptr.next = null;
-		}
-//		printList(dummy.next);
-
-		Nod3 rev = reverseList(head1);
-
-		curr = dummy.next;
-
-		while (curr != null && rev != null) {
 			if (curr.data != rev.data) {
 				return false;
 			}
