@@ -17,16 +17,16 @@ public class DeleteHeadofList {
 	public static void main(String[] args) {
 
 		Node3 head = new Node3(10);
-//		Node3 temp = new Node3(20);
-//		Node3 temp1 = new Node3(40);
-//		Node3 temp2 = new Node3(30);
-//
-//		head.next = temp;
-//		temp.prev = head;
-//		temp.next = temp1;
-//		temp1.prev = temp;
-//		temp1.next = temp2;
-//		temp2.prev = temp1;
+		Node3 temp = new Node3(20);
+		Node3 temp1 = new Node3(40);
+		Node3 temp2 = new Node3(30);
+
+		head.next = temp;
+		temp.prev = head;
+		temp.next = temp1;
+		temp1.prev = temp;
+		temp1.next = temp2;
+		temp2.prev = temp1;
 
 		printList(head);
 		System.out.println("After removing the first node");
