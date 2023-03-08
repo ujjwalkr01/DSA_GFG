@@ -26,8 +26,29 @@ public class RotateLinkList {
 		printList(head);
 		System.out.println("After rotating the element Kth times");
 		int k = 3;
-		head = rotateTheList(head, k);
+// 		head = rotateTheList(head, k);
+// 		printList(head);
+		
+		head = rotateTheListMethod2(head, k); //in this approach we are not using any extra space
 		printList(head);
+	}
+	
+        private static Node8 rotateTheListMethod2(Node8 head, int k) {
+
+		Node8 curr = head;
+		for (int i = 1; i < k; i++) {
+			curr = curr.next;
+		}
+		Node8 temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+
+		temp.next = head;
+		head = curr.next;
+		curr.next = null;
+
+		return head;
 	}
 
 	private static Node8 rotateTheList(Node8 head, int k) {
