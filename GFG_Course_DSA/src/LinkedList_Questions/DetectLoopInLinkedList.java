@@ -28,11 +28,31 @@ public class DetectLoopInLinkedList {
 //		} else {
 //			System.out.println("No");
 //		}
-		if (checkLoopMethod2Hashing(head)) { // Method2 is hashing but linked list don't get destroyed
+		
+// 		if (checkLoopMethod2Hashing(head)) { // Method2 is hashing but linked list don't get destroyed
+// 			System.out.println("Yes");
+// 		} else {
+// 			System.out.println("No");
+// 		}
+		
+		if (checkLoopEfficientApproach(head)) { // this is efficient method and doesn't required extra space..
 			System.out.println("Yes");
 		} else {
 			System.out.println("No");
 		}
+	}
+       private static boolean checkLoopEfficientApproach(Nodes7 head) {
+              Nodes7 slow=head, fast=head;
+        
+              while(slow!=null && fast!=null && fast.next!=null) {
+        	  slow=slow.next;
+        	  fast=fast.next.next;
+        	
+        	  if(slow==fast) {
+        		return true;
+        	  }
+             }
+		return false;
 	}
 
 	private static boolean checkLoopMethod2Hashing(Nodes7 head) {
