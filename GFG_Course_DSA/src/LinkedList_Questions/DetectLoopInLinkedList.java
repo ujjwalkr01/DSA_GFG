@@ -44,7 +44,7 @@ public class DetectLoopInLinkedList {
        private static boolean checkLoopEfficientApproach(Nodes7 head) {
               Nodes7 slow=head, fast=head;
         
-              while(slow!=null && fast!=null && fast.next!=null) {
+              while(fast!=null && fast.next!=null) {
         	  slow=slow.next;
         	  fast=fast.next.next;
         	
