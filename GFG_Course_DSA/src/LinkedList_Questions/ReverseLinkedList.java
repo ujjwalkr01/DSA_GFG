@@ -29,48 +29,36 @@ public class ReverseLinkedList {
 		findtheNthLastEleMethod2(head, n);
 	}
 
-	private static void findtheNthLastEleMethod2(Nodes4 head, int n) {
+private static Nodes5 efficientSol(Nodes5 head) {
 
-		if (head == null) {
-			return;
-		}
-		Nodes4 first = head;
-		for (int i = 1; i <= n; i++) {
-			if (first == null) {
-				return;
-			}
-			first = first.next;
-		}
-		Nodes4 second = head;
-		while (first != null) {
-			second = second.next;
-			first = first.next;
-		}
-		System.out.println(second.data);
-	}
+		Nodes5 curr = head;
+		Nodes5 prev = null;
 
-	private static void findtheNthLastEle(Nodes4 head, int n) {
-
-		Nodes4 curr = head;
-		int count = 0;
 		while (curr != null) {
-			count++;
-			curr = curr.next;
+			Nodes5 temp = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = temp;
 		}
-		if (n > count) {
-			return;
-		}
-		curr = head;
-		for (int i = 1; i <= count - n; i++) {
-			curr = curr.next;
-		}
-		System.out.println(curr.data);
-
+		return prev;
 	}
 
-	private static void printhead(Nodes4 head) {
+	private static Nodes5 reverseThelist(Nodes5 head) {
 
-		Nodes4 curr = head;
+		ArrayList<Integer> list = new ArrayList<>();
+
+		for (Nodes5 curr = head; curr != null; curr = curr.next) {
+			list.add(curr.data);
+		}
+		for (Nodes5 curr = head; curr != null; curr = curr.next) {
+			curr.data = list.remove(list.size() - 1);
+		}
+		return head;
+	}
+
+	private static void printList(Nodes5 head) {
+
+		Nodes5 curr = head;
 		while (curr != null) {
 			System.out.print(curr.data + " ");
 			curr = curr.next;
